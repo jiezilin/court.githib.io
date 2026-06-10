@@ -1,0 +1,315 @@
+<!DOCTYPE html><html class="dark" lang="zh-Hant" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THE SUMMIT CENTER - 專注巔峰的球場預約</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Chivo:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed-dim": "#85cfff",
+                        "secondary": "#c6c6c7",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#001e2e",
+                        "surface-container-low": "#1b1b1b",
+                        "on-error": "#690005",
+                        "background": "#131313",
+                        "surface-container-highest": "#353535",
+                        "on-surface-variant": "#ddc1ae",
+                        "tertiary-fixed": "#c7e7ff",
+                        "on-primary-container": "#623200",
+                        "surface-tint": "#ffb77d",
+                        "secondary-container": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-primary": "#904d00",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed": "#2f1500",
+                        "primary-container": "#ff8c00",
+                        "tertiary": "#85cfff",
+                        "on-tertiary-container": "#004360",
+                        "on-secondary-fixed-variant": "#454747",
+                        "surface-bright": "#393939",
+                        "primary": "#ffb77d",
+                        "surface-dim": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#00344c",
+                        "outline": "#a48c7a",
+                        "on-background": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#00b5fc",
+                        "on-primary": "#4d2600",
+                        "on-secondary-container": "#b4b5b5",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-container": "#1f1f1f",
+                        "on-secondary": "#2f3131",
+                        "on-tertiary-fixed-variant": "#004c6c",
+                        "outline-variant": "#564334",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "base": "8px",
+                        "stack-sm": "4px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Chivo"],
+                        "headline-md": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "body-md": ["Chivo"],
+                        "label-sm": ["Chivo"],
+                        "body-lg": ["Chivo"],
+                        "headline-lg": ["Anybody"],
+                        "display-lg": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-40">
+<!-- TopAppBar -->
+<header class="bg-background border-b border-outline-variant w-full sticky top-0 flex justify-between items-center px-container-margin py-4 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: &quot;FILL&quot; 1;">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-white tracking-tighter uppercase">COURTFLOW</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-container-margin mt-gutter">
+<!-- Hero Section -->
+<section class="relative rounded-lg overflow-hidden h-64 md:h-96 mb-stack-md group">
+<img alt="Professional indoor basketball court" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZL63cUkE3eulA65VFd0ZP8eG_LneEuyF0gYtVUaXgHiCWpbIn1mrK8YXuhmqDl2-mp6-KV8UwdGZU-xm78e8t1VFt9MiCkWVeBov0iFXT_JieaHTWR2JeXdgaasNN4Q6JW3AGzzuR3Cl5dFcwqo01UVwhqj55zeROVBjwDQLoAOtWOLJZQ0_fSg8edG2rn227z0sRAlcRvb58DYZ1YZoGu7_Me2urwIDvw_8ifAhyBdfcd5nLrbVXmlIXLqpYMFYthB1xzeTX6e_">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="inline-block bg-primary-container text-on-primary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-sm font-bold mb-1">THE SUMMIT CENTER</div>
+<div class="flex justify-between items-end">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase leading-tight font-bold">THE SUMMIT CENTER</h2>
+<div class="flex items-center bg-white/10 backdrop-blur-md px-2 py-1 rounded border border-white/20">
+<span class="material-symbols-outlined text-primary-container text-sm mr-1" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="font-bold text-white text-sm">4.9</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Price -->
+<div class="flex justify-between items-start mb-stack-lg">
+<div class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container mr-2">location_on</span>
+<span class="font-label-lg">台北市信義區</span>
+</div>
+<div class="text-right">
+<div class="flex items-baseline justify-end gap-1">
+<p class="text-primary-container font-display-lg text-4xl leading-none">$60</p>
+</div>
+<p class="text-on-surface-variant font-label-sm uppercase tracking-widest">/ HR</p>
+</div>
+</div>
+<!-- Amenities 2-Column Grid -->
+<section class="mb-stack-lg">
+<h3 class="font-label-lg uppercase tracking-widest text-on-surface-variant mb-4">場地設備</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container">deck</span>
+<span class="font-label-lg">室內木地板</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container">ac_unit</span>
+<span class="font-label-lg">全場空調</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container">local_parking</span>
+<span class="font-label-lg">專屬停車場</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container">shower</span>
+<span class="font-label-lg">淋浴設施</span>
+</div>
+</div>
+</section>
+<!-- Date Picker -->
+<section class="mb-stack-lg">
+<h3 class="font-headline-md text-headline-md mb-4 text-white">選擇日期</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<div class="flex-shrink-0 w-16 h-20 bg-primary-container text-on-primary-fixed flex flex-col items-center justify-center cursor-pointer border-2 border-primary-container active-glow rounded-full">
+<span class="font-label-sm uppercase">今日</span>
+<span class="text-2xl font-bold">24</span>
+</div>
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container border border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-all rounded-full">
+<span class="font-label-sm uppercase">週一</span>
+<span class="text-2xl font-bold">25</span>
+</div>
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container border border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-all rounded-full">
+<span class="font-label-sm uppercase">週二</span>
+<span class="text-2xl font-bold">26</span>
+</div>
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container border border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-all rounded-full">
+<span class="font-label-sm uppercase">週三</span>
+<span class="text-2xl font-bold">27</span>
+</div>
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container border border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-all rounded-full">
+<span class="font-label-sm uppercase">週四</span>
+<span class="text-2xl font-bold">28</span>
+</div>
+<div class="flex-shrink-0 w-16 h-20 bg-surface-container border border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:border-primary-container transition-all rounded-full">
+<span class="font-label-sm uppercase">週五</span>
+<span class="text-2xl font-bold">29</span>
+</div>
+</div>
+</section>
+<!-- Time Slot 3-Column Grid -->
+<section class="mb-stack-lg">
+<h3 class="font-headline-md text-headline-md mb-4 text-white">選擇時段</h3>
+<div class="grid grid-cols-3 gap-gutter">
+<button class="py-4 border border-outline-variant bg-surface-container hover:border-primary-container transition-all rounded-full">
+<span class="font-label-lg">14:00</span>
+</button>
+<button class="py-4 border border-outline-variant bg-surface-container hover:border-primary-container transition-all rounded-full">
+<span class="font-label-lg">15:00</span>
+</button>
+<button class="py-4 border-2 border-primary-container bg-primary-container/20 text-primary-container active-glow transition-all rounded-full">
+<span class="font-label-lg font-bold">16:00</span>
+</button>
+<button class="py-4 border border-outline-variant bg-surface-container hover:border-primary-container transition-all rounded-full">
+<span class="font-label-lg">17:00</span>
+</button>
+<button class="py-4 border border-outline-variant bg-surface-container hover:border-primary-container transition-all opacity-40 cursor-not-allowed rounded-full">
+<span class="font-label-lg">18:00</span>
+</button>
+<button class="py-4 border border-outline-variant bg-surface-container hover:border-primary-container transition-all rounded-full">
+<span class="font-label-lg">19:00</span>
+</button>
+</div>
+</section>
+<!-- Location Section -->
+<section class="mb-stack-lg">
+<h3 class="font-headline-md text-headline-md mb-4 text-white">位置</h3>
+<div class="h-48 w-full rounded-lg bg-surface-container-low border border-outline-variant overflow-hidden relative group">
+<div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<span class="material-symbols-outlined text-primary-container text-5xl">push_pin</span>
+</div>
+<img alt="Map view of Taipei" class="w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJbA6baYmta0IxUhC0mpj6ByS3g__tnbBBLafKGCv_ts39gLXUoVF5rjZ8YxWHB5edchJQAcl2eisnfjsaA933Po6UhoSMDHEtPO5cWGzaUJTtEToadrbTbEL_xWtlQmE66565sNgb0kzs3vFoB-QkKxsOHu5TLIyH4DrQn2bPMzDUzWlSAzXXpLz5v4e9ouRSBetlvk3I8JJSKvRnyyVEOaIddCWLNr3_4JsRiZyAO5S9tOWzPWY0jStQiSi9ct-yNvgplRZOtiWI">
+<div class="absolute bottom-2 left-2 bg-black/80 px-2 py-1 text-[10px] rounded text-on-surface border border-outline-variant z-20">
+                    台北市信義區信義路五段7號
+                </div>
+</div>
+</section>
+</main>
+<!-- Sticky Booking Bar -->
+<div class="fixed bottom-16 left-0 w-full bg-background border-t border-outline-variant px-container-margin py-4 z-40 h-24">
+<div class="max-w-4xl mx-auto flex items-center justify-between">
+<div>
+<p class="text-on-surface-variant font-label-sm uppercase tracking-wider">總計費用</p>
+<p class="text-primary-container font-headline-md">$120.00</p>
+</div>
+<button class="bg-primary-container text-on-primary-fixed px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-lg active-glow">
+                立即預約
+            </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-primary-container z-50"><button class="flex flex-col items-center justify-center text-on-primary-fixed opacity-80 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed opacity-80 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">add_box</span>
+<span class="text-[10px] font-bold">新增</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">search</span>
+<span class="text-[10px] font-bold">找球場</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed opacity-80 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">handshake</span>
+<span class="text-[10px] font-bold">找夥伴</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed opacity-80 hover:opacity-100 transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">個人檔案</span>
+</button></nav>
+<script>
+        // Time Slot selection logic
+        document.querySelectorAll('section:nth-of-type(4) button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('opacity-40')) return;
+                document.querySelectorAll('section:nth-of-type(4) button').forEach(b => {
+                    b.classList.remove('border-2', 'border-primary-container', 'bg-primary-container/20', 'text-primary-container', 'active-glow', 'font-bold');
+                    b.classList.add('border', 'border-outline-variant', 'bg-surface-container');
+                });
+                this.classList.remove('border', 'border-outline-variant', 'bg-surface-container');
+                this.classList.add('border-2', 'border-primary-container', 'bg-primary-container/20', 'text-primary-container', 'active-glow', 'font-bold');
+            });
+        });
+
+        // Date Picker logic
+        const dateItems = document.querySelectorAll('.overflow-x-auto > div');
+        dateItems.forEach(item => {
+            item.addEventListener('click', function() {
+                dateItems.forEach(i => {
+                    i.classList.remove('bg-primary-container', 'text-on-primary-fixed', 'border-2', 'border-primary-container', 'active-glow');
+                    i.classList.add('bg-surface-container', 'border', 'border-outline-variant');
+                });
+                this.classList.remove('bg-surface-container', 'border', 'border-outline-variant');
+                this.classList.add('bg-primary-container', 'text-on-primary-fixed', 'border-2', 'border-primary-container', 'active-glow');
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

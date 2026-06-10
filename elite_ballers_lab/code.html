@@ -1,0 +1,290 @@
+<!DOCTYPE html><html class="dark" lang="zh-Hant" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Chivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "tertiary-fixed-dim": "#85cfff",
+                    "secondary": "#c6c6c7",
+                    "surface": "#131313",
+                    "on-tertiary-fixed": "#001e2e",
+                    "surface-container-low": "#1b1b1b",
+                    "on-error": "#690005",
+                    "background": "#131313",
+                    "surface-container-highest": "#353535",
+                    "on-surface-variant": "#ddc1ae",
+                    "tertiary-fixed": "#c7e7ff",
+                    "on-primary-container": "#623200",
+                    "surface-tint": "#ffb77d",
+                    "secondary-container": "#454747",
+                    "inverse-surface": "#e2e2e2",
+                    "inverse-primary": "#904d00",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-fixed": "#2f1500",
+                    "primary-container": "#ff8c00",
+                    "tertiary": "#85cfff",
+                    "on-tertiary-container": "#004360",
+                    "on-secondary-fixed-variant": "#454747",
+                    "surface-bright": "#393939",
+                    "primary": "#ffb77d",
+                    "surface-dim": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#00344c",
+                    "outline": "#a48c7a",
+                    "on-background": "#e2e2e2",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-on-surface": "#303030",
+                    "tertiary-container": "#00b5fc",
+                    "on-primary": "#4d2600",
+                    "on-secondary-container": "#b4b5b5",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "primary-fixed": "#ffdcc3",
+                    "surface-variant": "#353535",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "surface-container": "#1f1f1f",
+                    "on-secondary": "#2f3131",
+                    "on-tertiary-fixed-variant": "#004c6c",
+                    "outline-variant": "#564334",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "base": "8px",
+                    "stack-sm": "4px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "container-margin": "20px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Chivo"],
+                    "headline-md": ["Anybody"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "body-md": ["Chivo"],
+                    "label-sm": ["Chivo"],
+                    "body-lg": ["Chivo"],
+                    "headline-lg": ["Anybody"],
+                    "display-lg": ["Anybody"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e2e2e2; -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .court-gradient { background: linear-gradient(0deg, rgba(19,19,19,1) 0%, rgba(19,19,19,0.5) 50%, rgba(19,19,19,0) 100%); }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden pb-[144px]">
+<!-- TopAppBar -->
+<header class="bg-background w-full top-0 border-b border-outline-variant flex justify-between items-center px-container-margin py-4 sticky z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter uppercase">COURTFLOW</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 active:scale-95 transition-transform text-on-surface">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto">
+<!-- Hero Section -->
+<section class="relative h-[300px] w-full overflow-hidden">
+<img alt="Elite Ballers Lab Basketball Court" class="w-full h-full object-cover" data-alt="A professional indoor basketball court with high-gloss polished hardwood floors reflecting bright stadium lighting. The atmosphere is intense and elite, featuring a primary orange and deep black color scheme consistent with a premium athletic facility. Modern basketball hoops with clear backboards are positioned at either end, and the surrounding walls have minimalist, high-contrast branding for ELITE BALLERS LAB. The lighting is cinematic, highlighting the professional-grade training equipment along the sidelines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrZrO_sKjiSNHb6F8mVb_bqKiCwItALMeQXmq6p98BCsUu6jTvhipQ4onB_tCqYCfoRC5ksp-FN9u10zLurLxA2BhWnL3StRd-Rn4I3c5WR7R1Qqv0433vb-5pZXuGilKqCk0hx3820DtO36DvDgAGGsFB8pvBC33zDipAjItmqx-u29BtrQrv8B1T3iJy4JDO8SIdiRGEEO_L8goA2EEEbEiI6u2RIf3y7e05QattKRm7bd5sp1NsZBacrVmf_cTmLALgr9DBL-my">
+<div class="absolute inset-0 court-gradient flex flex-col justify-end p-container-margin">
+<div class="flex justify-between items-end mb-2">
+<span class="bg-primary-container text-on-primary-fixed px-3 py-1 rounded font-label-lg uppercase">專業場館</span>
+<div class="flex items-center gap-1 bg-surface-container-highest/80 backdrop-blur-sm px-2 py-1 rounded text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg">4.8</span>
+</div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold uppercase tracking-tight">ELITE BALLERS LAB</h2>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="font-label-sm">台北市內湖科技園區</span>
+</div>
+</div>
+</section>
+<!-- Amenities Bento -->
+<section class="px-container-margin mt-gutter grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">layers</span>
+<p class="font-label-lg text-on-background">職業級地板</p>
+<p class="text-label-sm text-on-surface-variant mt-1">FIBA 認證楓木地板</p>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary mb-2">fitness_center</span>
+<p class="font-label-lg text-on-background">專業訓練器材</p>
+<p class="text-label-sm text-on-surface-variant mt-1">Dr. Dish 投籃機可用</p>
+</div>
+</section><section class="mt-stack-lg px-container-margin">
+<h3 class="font-label-lg text-on-surface-variant uppercase tracking-widest mb-stack-md">場館設施</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">shower</span>
+<span class="font-label-lg text-on-surface">淋浴間</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">lock</span>
+<span class="font-label-lg text-on-surface">置物櫃</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+<span class="font-label-lg text-on-surface">飲水機</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">ac_unit</span>
+<span class="font-label-lg text-on-surface">空調開放</span>
+</div>
+<div class="flex items-center gap-3 bg-surface-container-low p-3 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">local_parking</span>
+<span class="font-label-lg text-on-surface">停車場</span>
+</div>
+</div>
+</section>
+<!-- Date Picker -->
+<section class="mt-stack-lg">
+<div class="px-container-margin flex justify-between items-end mb-stack-md">
+<h3 class="font-headline-md text-on-background">選擇日期</h3>
+<span class="text-primary font-label-lg mb-1">2024年 10月</span>
+</div>
+<div class="flex overflow-x-auto no-scrollbar gap-3 px-container-margin">
+<!-- Active Date -->
+<div class="flex flex-col items-center justify-center min-w-[72px] h-24 bg-[#ff8c00] rounded-xl text-black shadow-lg shadow-[#ff8c00]/20 transition-all active:scale-95 cursor-pointer">
+<span class="font-label-sm font-bold uppercase opacity-80">週二</span>
+<span class="font-headline-md">24</span>
+</div>
+<!-- Inactive Dates -->
+<div class="flex flex-col items-center justify-center min-w-[72px] h-24 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface-variant hover:border-primary/50 transition-colors">
+<span class="font-label-sm">週三</span>
+<span class="font-headline-md">25</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[72px] h-24 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface-variant hover:border-primary/50 transition-colors">
+<span class="font-label-sm">週四</span>
+<span class="font-headline-md">26</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[72px] h-24 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface-variant hover:border-primary/50 transition-colors">
+<span class="font-label-sm">週五</span>
+<span class="font-headline-md">27</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[72px] h-24 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface-variant hover:border-primary/50 transition-colors">
+<span class="font-label-sm">週六</span>
+<span class="font-headline-md">28</span>
+</div>
+</div>
+</section>
+<!-- Time Slots -->
+<section class="mt-stack-lg px-container-margin">
+<h3 class="font-headline-md text-on-background mb-stack-md">可用時段</h3>
+<div class="grid grid-cols-3 gap-gutter">
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">09:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">10:00</button>
+<button class="py-4 border-2 border-[#ff8c00] bg-[#ff8c00]/10 rounded-xl font-label-lg text-[#ff8c00] transition-all shadow-sm">11:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg opacity-30 text-on-surface bg-surface-container-low cursor-not-allowed line-through">12:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">13:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">14:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">15:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">16:00</button>
+<button class="py-4 border border-outline-variant rounded-xl font-label-lg text-on-surface bg-surface-container-low transition-all hover:border-primary">17:00</button>
+</div>
+</section>
+<!-- Amenities Grid -->
+</main>
+<!-- Fixed Footer Actions -->
+<div class="fixed bottom-16 left-0 w-full bg-surface-container/95 backdrop-blur-md border-t border-outline-variant z-40">
+<div class="max-w-md mx-auto px-container-margin py-4 flex justify-between items-center h-24">
+<div>
+<p class="text-on-surface-variant font-label-sm">預估總金額</p>
+<p class="font-headline-md text-[#ff8c00]">$900 <span class="text-body-md font-normal text-on-surface">/ hr</span></p>
+</div>
+<button class="bg-[#ff8c00] text-black px-8 py-3 rounded-xl font-bold hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-[#ff8c00]/20 uppercase tracking-widest text-sm">
+            立即預約
+        </button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-[#ff8c00] z-50">
+<button class="flex flex-col items-center justify-center w-full h-full text-black/60 hover:text-black transition-colors active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-black/60 hover:text-black transition-colors active:scale-90">
+<span class="material-symbols-outlined">add_box</span>
+<span class="text-[10px] font-bold">新增</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-black transition-colors active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="text-[10px] font-bold">找球場</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-black/60 hover:text-black transition-colors active:scale-90">
+<span class="material-symbols-outlined">handshake</span>
+<span class="text-[10px] font-bold">找夥伴</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-black/60 hover:text-black transition-colors active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">個人檔案</span>
+</button>
+</nav>
+<script>
+        // Interactive Selection Logic
+        document.querySelectorAll('.grid button:not([disabled])').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.classList.contains('opacity-30')) return;
+                
+                document.querySelectorAll('.grid button:not([disabled])').forEach(b => {
+                    if(!b.classList.contains('opacity-30')) {
+                        b.classList.remove('border-2', 'border-primary', 'bg-primary/10', 'text-primary');
+                        b.classList.add('border', 'border-outline-variant', 'text-on-surface', 'bg-surface-container-low');
+                    }
+                });
+                this.classList.remove('border', 'border-outline-variant', 'text-on-surface', 'bg-surface-container-low');
+                this.classList.add('border-2', 'border-primary', 'bg-primary/10', 'text-primary');
+            });
+        });
+
+        document.querySelectorAll('.flex.overflow-x-auto > div').forEach(date => {
+            date.addEventListener('click', function() {
+                document.querySelectorAll('.flex.overflow-x-auto > div').forEach(d => {
+                    d.classList.remove('bg-[#ff8c00]', 'text-black', 'shadow-lg', 'shadow-[#ff8c00]/20');
+                    d.querySelector('span:first-child').classList.add('opacity-80');
+                    d.classList.add('bg-surface-container-low', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                });
+                this.classList.remove('bg-surface-container-low', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                this.classList.add('bg-[#ff8c00]', 'text-black', 'shadow-lg', 'shadow-[#ff8c00]/20');
+                this.querySelector('span:first-child').classList.remove('opacity-80');
+            });
+        });
+    </script>
+
+
+</body></html>

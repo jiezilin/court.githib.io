@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CourtFlow - Find Partners</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Chivo:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Chivo:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#131313",
+                    "surface-container-highest": "#353535",
+                    "inverse-on-surface": "#303030",
+                    "primary-container": "#ff8c00",
+                    "on-tertiary-fixed": "#001e2e",
+                    "on-tertiary": "#00344c",
+                    "inverse-primary": "#904d00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-surface": "#e2e2e2",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-container": "#1f1f1f",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "tertiary-fixed-dim": "#85cfff",
+                    "surface-bright": "#393939",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-secondary": "#2f3131",
+                    "tertiary-fixed": "#c7e7ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-tint": "#ffb77d",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-primary": "#4d2600",
+                    "tertiary-container": "#00b5fc",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary-container": "#004360",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-primary-container": "#623200",
+                    "on-surface-variant": "#ddc1ae",
+                    "tertiary": "#85cfff",
+                    "surface-dim": "#131313",
+                    "on-background": "#e2e2e2",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary": "#ffb77d",
+                    "surface": "#131313",
+                    "on-tertiary-fixed-variant": "#004c6c",
+                    "outline": "#a48c7a",
+                    "outline-variant": "#564334",
+                    "on-secondary-fixed-variant": "#454747",
+                    "secondary-container": "#454747",
+                    "primary-fixed": "#ffdcc3",
+                    "secondary": "#c6c6c7",
+                    "surface-container-low": "#1b1b1b",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#353535",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-md": "16px",
+                    "stack-sm": "4px",
+                    "gutter": "12px",
+                    "container-margin": "20px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "body-lg": ["Chivo"],
+                    "headline-md": ["Anybody"],
+                    "display-lg": ["Anybody"],
+                    "body-md": ["Chivo"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "label-lg": ["Chivo"],
+                    "label-sm": ["Chivo"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #ff8c00; border-radius: 10px; }
+        
+        .map-mesh {
+            background-image: radial-gradient(#353535 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .partner-card-active {
+            border-color: #ff8c00 !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen pb-20">
+<!-- Top Bar Component -->
+<header class="w-full top-0 bg-background dark:bg-background border-b border-outline-variant flex justify-between items-center px-container-margin py-4 z-50 sticky">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter uppercase">COURTFLOW</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:opacity-80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative w-full">
+<!-- Toggle Actions Section -->
+<section class="px-container-margin pt-stack-md flex justify-between items-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase italic tracking-tight">附近球友</h2>
+<div class="flex bg-surface-container rounded-xl p-1">
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary-fixed font-label-lg flex items-center gap-2 transition-all" id="view-map-btn"><span class="material-symbols-outlined text-[18px]">map</span>地圖</button>
+<button class="px-4 py-2 rounded-lg text-on-surface font-label-lg flex items-center gap-2 transition-all hover:bg-surface-container-highest" id="view-list-btn"><span class="material-symbols-outlined text-[18px]">list</span>列表</button>
+</div>
+</section>
+<!-- View Containers -->
+<div class="mt-stack-md">
+<!-- Map View (Default) -->
+<div class="relative w-full h-[60vh] bg-surface-container-low map-mesh border-y border-outline-variant overflow-hidden" id="map-view">
+<!-- Decorative Map Elements -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="w-full h-full" style="background: linear-gradient(0deg, #131313 0%, transparent 100%);"></div>
+</div>
+<!-- Map Avatar Pin 1 -->
+<div class="absolute top-1/4 left-1/3 group cursor-pointer" onclick="selectBaller('jordan')">
+<div class="relative flex flex-col items-center">
+<div class="w-14 h-14 rounded-full border-2 border-primary overflow-hidden shadow-2xl transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="A close-up portrait of a determined young male basketball player with short hair and athletic features. The background is a dimly lit indoor court with warm orange rim lighting that catches the edges of his face. The overall aesthetic is high-contrast and professional, with a deep black background and intense orange highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmtmooYCjCfhdqd0hWTmtYpsZzCSYcacaBnGSGkZAZnq69aDMkoUJJt5lzMKJpstJAPXfWQfvB35VU0LwQuz615S5Vq0q7CupoBZ2mzCs7R4a5otfx3pRZwLn_wXshdKG41I6FyhuV21QLrfvfOuO6BTigkyLqGXgsMczIjNwTmh6XHT4KvNNVUwT2r_IttjPGJ0Z5jGoQasvvaMCDmGKCoOIv8qq4UqVRMNYO97lfEnZgo_7dy-XnZseOOGUKXC_2JNmvUGP2NQS4">
+</div>
+<div class="mt-2 bg-primary text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full">0.8km</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-background rounded-full"></div>
+</div>
+</div>
+<!-- Map Avatar Pin 2 -->
+<div class="absolute bottom-1/3 right-1/4 group cursor-pointer" onclick="selectBaller('sarah')">
+<div class="relative flex flex-col items-center">
+<div class="w-14 h-14 rounded-full border-2 border-on-secondary-container overflow-hidden shadow-2xl transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="A portrait of a confident female athlete in her late 20s, wearing a dark athletic jersey. Her expression is focused and ready for action. The lighting is cinematic, utilizing a low-key setup with vibrant orange accents reflecting off her skin, perfectly matching a premium indoor basketball arena environment. Dark, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzpvF6ITVBJzWAarTARTwlMCsJNIYftgq-HAlYcfyjtyGlS-3rCAqg1xEGnDHWvsf7OZFg9QXoAw5YXP0OXMLAPdAf_FB2m9ZRI4HVUi6kdpupuUlu-IczXLYfaYIyNiH5pi5KClDmym3SXGmX3qEbZqkr_LEf7Hf7pO5g7jwuBn7Ag9EkB-y7u4CQ8MZHmb0ZGNBZaqT22w7E7qc7oMZUpIAQxWjLAOGtWYNvKBemQAOCl88jhhf9OTAValagl2s0Q3Jx5-INOdyu">
+</div>
+<div class="mt-2 bg-surface-container-highest text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full">1.2km</div>
+</div>
+</div>
+<!-- Map Avatar Pin 3 -->
+<div class="absolute top-1/2 left-1/2 group cursor-pointer" onclick="selectBaller('mike')">
+<div class="relative flex flex-col items-center">
+<div class="w-14 h-14 rounded-full border-2 border-on-secondary-container overflow-hidden shadow-2xl transition-transform group-hover:scale-110">
+<img alt="" class="w-full h-full object-cover" data-alt="A headshot of a tall, athletic male basketball player with a friendly but intense gaze. He is wearing high-performance sports apparel. The background is a blurred high-end indoor sports facility with deep black shadows and bright orange primary light sources that define the athletic atmosphere. Strong contrast and bold colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtKolKE7Pgaa2C2qVMJTadUYUoqk_ZVl5aOwQvbRBp5SqXtLOcati6tjsJQ6CvwGB2mOGNQ2ItCKtU8WsHqw8vNW_k0NhTsKY8s7ckVtL25Telf7OCjic-jdj84pnyI8wNIo6H86WRA9fdBJDYDsfrWs26g5heClIX5B4f9NBmPXwmDjc4sY_miwxALR-mBBAnAelINwE4V0X7VeS4avWL3_Ykflk1J-nZ_OkbeKcBe8GRE2PxNgFXKvYPEJxeGJ2418b5VwXfY8pT">
+</div>
+<div class="mt-2 bg-surface-container-highest text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full">2.5km</div>
+</div>
+</div>
+<!-- Active Card Floating Info -->
+<div class="absolute bottom-6 left-container-margin right-container-margin bg-surface-container p-4 rounded-xl border border-primary flex items-center gap-4 transition-all transform translate-y-0 opacity-100" id="active-map-card">
+<div class="w-16 h-16 rounded-lg overflow-hidden bg-background border border-outline-variant">
+<img alt="" class="w-full h-full object-cover" data-alt="An action-oriented portrait of a male basketball player in a premium dark studio setting. Intense orange lighting contours his athletic build, creating a high-contrast look against a pure black background. He has a focused expression, conveying precision and skill. The style is modern, energetic, and professional." id="map-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBV-OKCmj7Hn5Yw5wknTYOWtwaf0dTZ73oyua_l8rxyaConeH18N_38u5_Ci7s3Pf2_giotnjkqCBM7Zf7cycFByMO9DlpdCdJJHb-t118R9NH6h9qFxqdlEOlCZRAPt7k_y4VzXDBCugG3jhbW-maVUHkaQNOrIzCnUtlD2xyozTPJe-SqdUvz3Oq9quoauELimTfOFV_UCqoTMVoX35BurRZgFU8GKJb5zui8ctPI8JUtCFDimAZLK5El8ozseLsAu6wd5S-1Gt">
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface leading-tight" id="map-card-name">Jordan R.</h3>
+<span class="bg-primary text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded uppercase">PRO</span>
+</div>
+<p class="text-on-surface-variant font-label-sm mt-1">距離: <span class="text-primary">0.8km</span> • 球技: <span class="text-primary">精英</span></p>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-primary text-on-primary-fixed py-1.5 rounded-lg font-label-lg uppercase transition-all active:scale-95">邀請球敘</button>
+</div>
+</div>
+<button class="absolute -top-2 -right-2 bg-surface-container-highest text-on-surface rounded-full p-1" onclick="document.getElementById('active-map-card').style.display='none'">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+<!-- List View (Hidden by default) -->
+<div class="hidden px-container-margin space-y-gutter" id="list-view">
+<!-- Filter Chips -->
+<div class="flex gap-2 py-4 overflow-x-auto no-scrollbar">
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary-fixed font-label-lg whitespace-nowrap">All Skills</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-lg whitespace-nowrap">Point Guard</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-lg whitespace-nowrap">Forward</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-lg whitespace-nowrap">Centers</button>
+</div>
+<!-- List Item 1 -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex gap-4 hover:border-primary transition-all group">
+<div class="relative">
+<div class="w-20 h-20 rounded-xl overflow-hidden border border-outline-variant">
+<img alt="" class="w-full h-full object-cover" data-alt="A portrait of a male basketball athlete, captured with dramatic high-key lighting that emphasizes strong facial features and an athletic silhouette. Vibrant orange accents highlight the scene against a deep charcoal and black background. The mood is intense and professional, reflecting the high-octane energy of an elite sports brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSQqIwQjw98GLWmMfsRTi8LWGDraAb1zOwT8r9LoX7fpw-lDxitLXud9l2v69Jt8GpHpN14j9iWkhVwnsPP-WyY63goDkO8QDm5cwzg4BMsAFLl8rM3O7BC3xBlwrIa73jixlOclvkstKm9dhDV2sTD3ONYB0if_Ds5vdsYfp9utxpCOHuL3BS5rt7-y77LRCKL35ERVRxX-6x3EWrI83NVJHIzjKCXya9bUHXgY_hGlTBWD4LPPwQnyMKvbR7Ghk8STUG278KF7Ul">
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-surface-container rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase italic tracking-tighter">Jordan R.</h4>
+<div class="flex gap-1 mt-1">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-primary font-bold rounded">LEVEL 8</span>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-on-surface-variant font-bold rounded">0.8 KM AWAY</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-label-sm mt-2 italic">"Looking for serious 3v3 games tonight at Metro Court."</p>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex gap-4 hover:border-primary transition-all group">
+<div class="w-20 h-20 rounded-xl overflow-hidden border border-outline-variant">
+<img alt="" class="w-full h-full object-cover" data-alt="A powerful studio portrait of a female basketball player with a focused gaze. She is lit by sharp, high-contrast orange and white lights that define her form against a pitch-black environment. The style is minimalist and athletic, suggesting professional grade performance. The color palette is strictly deep blacks and vibrant orange." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuZc39lAVJzZeWGRBRrT9esKc18SyJmgn8Qg3AueAjW4wKOPrK7DHUHZ-hUKQ4qHfsoUoTLEtLvaCHOz3-3rV4962iMhpVc6dTsK7RFlXBooHcKd8v8TDr74PxcxaVTtmaV-yAbPuFj74pTWDJHQ_ka9fO3xlOtOwBPvhhvxZI6roS0v96uNNp5461qRhQRfutg1Z-qLwPsVu9mpCb5gCP3S3I52cLUqS5GWpmProVbrIhGdCzVLuy0gncU-_lBjczs-lOegiEKGs2">
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase italic tracking-tighter">Sarah L.</h4>
+<div class="flex gap-1 mt-1">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-primary font-bold rounded">LEVEL 6</span>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-on-surface-variant font-bold rounded">1.2 KM AWAY</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-label-sm mt-2 italic">"Intermediate player, down for some shootaround or casual 1v1."</p>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex gap-4 hover:border-primary transition-all group">
+<div class="w-20 h-20 rounded-xl overflow-hidden border border-outline-variant">
+<img alt="" class="w-full h-full object-cover" data-alt="A high-intensity portrait of an athletic male basketball player in a dark gym setting. Cinematic lighting with strong orange rim light effects highlighting his silhouette. The background is a blurred court in shades of deep gray and black. Professional sports photography style, focusing on action and athletic readiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe_aVpat75XE4S-akZUKKtzep2XD-IXbpJtwRNZKPmNSKngMnZPWFfO8O-6sCRpLFAvSDbYrNNJBl7u7dznXUJ5WTt7KesGTpo0ZCpelPY3XDux0bahAsoFFcOp6nKmgb1Rtt97sX4t5Ig-jCFrUrrxgSb_ANLIRPREVNXh4Mk4ZWV1XTwPICs8DrCAAeQGpmNriOgshnlMB8Mwlv1yHFKeb1Bw7h8wZ2pC00vbeUpK1zsWbcBsiTu6yP02bcmm574VTbFrwodq0Kh">
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md uppercase italic tracking-tighter">Mike "The Jet"</h4>
+<div class="flex gap-1 mt-1">
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-primary font-bold rounded">LEVEL 9</span>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-highest text-on-surface-variant font-bold rounded">2.5 KM AWAY</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary-fixed transition-all">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+</div>
+<p class="text-on-surface-variant text-label-sm mt-2 italic">"Defensive specialist. Always looking for high-intensity runs."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action Banner -->
+<section class="px-container-margin py-stack-lg">
+<div class="bg-surface-container-high border-2 border-primary border-dashed rounded-xl p-6 text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">share_location</span>
+<h3 class="font-headline-md text-headline-md uppercase tracking-tighter mb-2">在球場上露面</h3>
+<p class="text-on-surface-variant font-body-md mb-4">分享您的即時位置，尋找目前在球場或附近的球友。</p>
+<button class="w-full bg-primary text-on-primary-fixed py-4 rounded-lg font-headline-md uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all">立即分享位置</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Component -->
+
+<script>
+        const mapBtn = document.getElementById('view-map-btn');
+        const listBtn = document.getElementById('view-list-btn');
+        const mapView = document.getElementById('map-view');
+        const listView = document.getElementById('list-view');
+
+        mapBtn.addEventListener('click', () => {
+            mapBtn.classList.add('bg-primary', 'text-on-primary-fixed');
+            mapBtn.classList.remove('text-on-surface');
+            listBtn.classList.remove('bg-primary', 'text-on-primary-fixed');
+            listBtn.classList.add('text-on-surface');
+            mapView.classList.remove('hidden');
+            listView.classList.add('hidden');
+        });
+
+        listBtn.addEventListener('click', () => {
+            listBtn.classList.add('bg-primary', 'text-on-primary-fixed');
+            listBtn.classList.remove('text-on-surface');
+            mapBtn.classList.remove('bg-primary', 'text-on-primary-fixed');
+            mapBtn.classList.add('text-on-surface');
+            mapView.classList.add('hidden');
+            listView.classList.remove('hidden');
+        });
+
+        const ballerData = {
+            'jordan': {
+                name: 'Jordan R.',
+                img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80',
+                distance: '0.8km',
+                skill: 'Elite',
+                tag: 'PRO'
+            },
+            'sarah': {
+                name: 'Sarah L.',
+                img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80',
+                distance: '1.2km',
+                skill: 'Intermediate',
+                tag: 'LOCAL'
+            },
+            'mike': {
+                name: 'Mike "Jet"',
+                img: 'https://images.unsplash.com/photo-1492562080023-ab3dbdf5bb3d?auto=format&fit=crop&w=150&q=80',
+                distance: '2.5km',
+                skill: 'Master',
+                tag: 'ELITE'
+            }
+        };
+
+        function selectBaller(key) {
+            const data = ballerData[key];
+            const card = document.getElementById('active-map-card');
+            const nameEl = document.getElementById('map-card-name');
+            const imgEl = document.getElementById('map-card-img');
+            
+            card.style.display = 'flex';
+            nameEl.innerText = data.name;
+            imgEl.src = data.img;
+            
+            // Add a little pop animation
+            card.animate([
+                { transform: 'translateY(20px)', opacity: 0 },
+                { transform: 'translateY(0)', opacity: 1 }
+            ], {
+                duration: 300,
+                easing: 'ease-out'
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="dark" lang="zh-Hant"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>User Profile | COURTFLOW</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Chivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-surface": "#e2e2e2",
+                    "tertiary-fixed-dim": "#85cfff",
+                    "secondary-container": "#454747",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1f1f1f",
+                    "secondary": "#c6c6c7",
+                    "on-tertiary-container": "#004360",
+                    "primary-container": "#ff8c00",
+                    "background": "#131313",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed": "#001e2e",
+                    "surface-dim": "#131313",
+                    "surface-variant": "#353535",
+                    "on-tertiary": "#00344c",
+                    "inverse-primary": "#904d00",
+                    "tertiary-fixed": "#c7e7ff",
+                    "primary": "#ffb77d",
+                    "surface-container-highest": "#353535",
+                    "outline": "#a48c7a",
+                    "on-surface-variant": "#ddc1ae",
+                    "inverse-surface": "#e2e2e2",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-container": "#623200",
+                    "surface-container-low": "#1b1b1b",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "surface-tint": "#ffb77d",
+                    "on-error": "#690005",
+                    "surface-bright": "#393939",
+                    "on-secondary": "#2f3131",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#4d2600",
+                    "error-container": "#93000a",
+                    "surface": "#131313",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-fixed": "#ffdcc3",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "tertiary": "#85cfff",
+                    "inverse-on-surface": "#303030",
+                    "tertiary-container": "#00b5fc",
+                    "on-tertiary-fixed-variant": "#004c6c",
+                    "outline-variant": "#564334",
+                    "on-primary-fixed": "#2f1500"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "gutter": "12px",
+                    "base": "8px",
+                    "stack-md": "16px",
+                    "stack-sm": "4px",
+                    "container-margin": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Chivo"],
+                    "display-lg": ["Anybody"],
+                    "label-lg": ["Chivo"],
+                    "body-md": ["Chivo"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "headline-md": ["Anybody"],
+                    "headline-lg": ["Anybody"],
+                    "body-lg": ["Chivo"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .profile-gradient {
+            background: linear-gradient(180deg, rgba(255, 140, 0, 0.15) 0%, rgba(19, 19, 19, 0) 100%);
+        }
+        .stats-card {
+            background: #121212;
+            border: 1px solid #1A1A1A;
+        }
+        .tab-active {
+            border-bottom: 3px solid #ff8c00;
+            color: #ff8c00;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md mb-20">
+<!-- Top App Bar -->
+<header class="bg-background dark:bg-background border-b border-outline-variant w-full top-0 sticky z-40 flex justify-between items-center px-container-margin py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sports_basketball">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">COURTFLOW</h1>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface hover:opacity-80 active:scale-95 transition-transform cursor-pointer" data-icon="settings">settings</span>
+<span class="material-symbols-outlined text-on-surface hover:opacity-80 active:scale-95 transition-transform cursor-pointer" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Profile Section -->
+<section class="profile-gradient px-container-margin pt-stack-lg pb-stack-md flex flex-col items-center text-center">
+<div class="relative mb-stack-md">
+<div class="w-24 h-24 rounded-full border-4 border-primary-container overflow-hidden shadow-xl">
+<img alt="Jordan R." class="w-full h-full object-cover" data-alt="A professional headshot of a young athletic male basketball player with a determined expression, lit by high-contrast side lighting that emphasizes his athletic features. The background is a dark, moody indoor basketball arena with subtle orange glow effects. The overall style is high-energy, athletic, and premium cinematic dark mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBemMWEXOVUwAImdRZbIJIBGO_4JRqxk0NTuZ-sq6Q5ECtk8AFI9LOJh2Rb302uLJhBSbHvIdh7ojYMNBiRYqYBEBYh3OUjX7_GQ_87ebvXh7tdJhCTDggPq47amGWcBVw1yd3r3Ukwq6BAR1MbuWZ5bB-J0F052kVqo9OasqwPfkO2zmblldbCpNE22zflRHE00XGQe2QTQa8GHYUV6VJQWRaWD1ufyXvKYON3OuyT2NF86eqAHGZkckqerzUJ9G_5RSA4YqiA__tW">
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary-fixed px-3 py-0.5 rounded-full font-label-sm text-label-sm font-bold uppercase tracking-wider">
+                    PRO
+                </div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-1">Jordan R.</h2>
+<p class="text-on-surface-variant font-label-lg text-label-lg">得分後衛 | 台北, 台灣</p>
+<div class="flex gap-3 mt-stack-md">
+<button class="bg-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-label-lg text-label-lg font-bold hover:opacity-80 active:scale-95 transition-all">
+                    編輯個人資料
+                </button>
+<button class="border border-on-surface text-on-surface px-6 py-2 rounded-lg font-label-lg text-label-lg font-bold hover:bg-white/10 active:scale-95 transition-all">
+                    分享
+                </button>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="px-container-margin py-stack-md">
+<div class="grid grid-cols-3 gap-gutter">
+<div class="stats-card p-4 flex flex-col items-center justify-center rounded-lg">
+<span class="text-primary-container font-headline-md text-headline-md font-extrabold">42</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase mt-1">比賽場次</span>
+</div>
+<div class="stats-card p-4 flex flex-col items-center justify-center rounded-lg">
+<span class="text-primary-container font-headline-md text-headline-md font-extrabold">68%</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase mt-1">勝率</span>
+</div>
+<div class="stats-card p-4 flex flex-col items-center justify-center rounded-lg">
+<span class="text-primary-container font-headline-md text-headline-md font-extrabold">4.9</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm uppercase mt-1">聲望評分</span>
+</div>
+</div>
+</section>
+<!-- Tabs Navigation -->
+<section class="mt-stack-md">
+<div class="flex border-b border-outline-variant px-container-margin">
+<button class="flex-1 py-4 font-label-lg text-label-lg tab-active transition-colors" id="tab-bookings" onclick="switchTab('bookings')">
+                    我的預約
+                </button>
+<button class="flex-1 py-4 font-label-lg text-label-lg text-on-surface-variant transition-colors" id="tab-saved" onclick="switchTab('saved')">
+                    收藏球場
+                </button>
+</div>
+<!-- Tab Content: My Bookings -->
+<div class="px-container-margin py-stack-md space-y-4" id="content-bookings">
+<div class="stats-card overflow-hidden rounded-xl">
+<div class="flex">
+<div class="w-24 h-24 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-end indoor basketball court with polished hardwood floors and professional bright overhead lighting. The court features clean white lines and orange accents on the hoops. A cinematic shot in a dark mode style that conveys an elite, professional athletic atmosphere with deep shadows and vibrant light highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPjZlmpigud21yCsh4jDB8n8T5q6tgcOdYZK1lnrX0LBtx8U0_Ovm7Y3y9rx2yunMiCvNMDp1QAmMkuz-8jEFWeyQ-ZTfG58E-h4c77nfJ0_lncULTFX6dhegxIFRQsH3vGTd8c4K660S5404ROYcWSyFB0Xwz86zajyeCC_mv_ZBc5TKDTN21VNwBMJAccJ20Md08az85H3qT0EHNQArMDW9RM7TVOJyOY4XFrh6roAoenTV2-QZXvAKek-nG23KRwFFYROzMS_aF">
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-background">極限籃球館 - A場地</h4>
+<p class="text-on-surface-variant text-[12px] flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span>
+                                    10月24日 (週四) | 19:00 - 21:00
+                                </p>
+</div>
+<div class="flex justify-between items-center">
+<span class="bg-primary-container/20 text-primary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">已確認</span>
+<span class="material-symbols-outlined text-primary-container" data-icon="qr_code_2">qr_code_2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="stats-card overflow-hidden rounded-xl">
+<div class="flex">
+<div class="w-24 h-24 shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern indoor basketball court facility with vibrant orange paint on the walls and crisp LED lighting. The floor is premium dark gray rubberized material. High-contrast athletic atmosphere designed for performance training, reflecting a dark-mode professional aesthetic with glowing accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBst11lhOQvrUIzUIzvzP6CPK3oS9ewZbhgQyOzOFlh70KWVg6AOITVByl7YzQJ7FKTi4dkG1kWRryrooFWeEg70b_A0vOn6G_RoD2vGH1_tYFLFR4kvZsaA7kEfaYXlove97uIIHwbQKQ7YDHClWKbYLLaQEAu5nQD6TFB5h-sJ1rV5Mr0xFGcigNmSVleY4q4bCgIUQ8V9-9iIjAtFVB8k86FmSQSlBvDQqh0RawazQlbQomejCIgyCnEoZlVyCFweKUgYGG52Anv">
+</div>
+<div class="p-4 flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-background">巔峰競技場</h4>
+<p class="text-on-surface-variant text-[12px] flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span>
+                                    10月27日 (週日) | 14:00 - 16:00
+                                </p>
+</div>
+<div class="flex justify-between items-center">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">等待中</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab Content: Saved Courts (Hidden by default) -->
+<div class="hidden px-container-margin py-stack-md grid grid-cols-2 gap-gutter" id="content-saved">
+<div class="stats-card rounded-xl overflow-hidden">
+<div class="h-28 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Close-up of a basketball net and rim against a dark dramatic sky. The lighting is low-key with intense orange highlights from nearby stadium lights. The style is athletic, moody, and minimal, focusing on the texture of the net and the high-contrast professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUmn0HKClnvgrQI0xbG9o9urtF0UbCRdfdaM3QB4h8OC3Okpie4qIWAqbBlXonTTtW0C45gL2UhXIPL9-3RfW7ljiMTC_LtUYIrXBosa7iWWyGLpJjV59Cc42840fqvp5Q6ziqyIQDaaPfsLZzMXriDwbZmS4nK-5nPOB1sz6hq3rzWgmT3I5vniHxDeqT5cpbNVUjSmG5xDU-HzlooBGu_jNg0THOCMjGdb98zm_pX_QwBaOgH5nVHOC6La9xpvCtNoocNz3F9-qc">
+<div class="absolute top-2 right-2 p-1 bg-black/50 rounded-full">
+<span class="material-symbols-outlined text-primary-container" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-3">
+<h4 class="font-label-lg text-label-lg truncate">西門紅樓街球場</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] text-on-surface">4.8 (1.2k)</span>
+</div>
+</div>
+</div>
+<div class="stats-card rounded-xl overflow-hidden">
+<div class="h-28 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Interior of a massive modern sports complex with multiple basketball courts side-by-side. The lighting is cool white with warm orange highlights on court perimeters. Ultra-clean architectural shot with a professional, high-performance athletic feel in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqRNYw7GKjLnYish_qUROfvUkGygvPtRxMO42B7RWzRHVD9lnq8xwyxXZT7ZdunlYgWTkUtryi8VSRX3QYz2lI9X1BUM48Mty8YFqQxH5IdWVN-deL0Ghtqy_yLR_ewF2wgmPEjq5IgXtkCg6tkOoqTFiihPLy5zlYAkhpnwZKNYiXf9N5KA4thEmKlCyQBBZKcYDb0qBlCXDqLGyD9n3hrGosXo4SfQrdiGE3uQbxQQADMOZXNGhlH_TLUl6iy3qZmAGsJbnc_Ffe">
+<div class="absolute top-2 right-2 p-1 bg-black/50 rounded-full">
+<span class="material-symbols-outlined text-primary-container" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+<div class="p-3">
+<h4 class="font-label-lg text-label-lg truncate">信義運動中心</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[12px] text-primary-container" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] text-on-surface">4.9 (850)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Account Management -->
+<section class="px-container-margin py-stack-lg border-t border-outline-variant mt-stack-md space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">帳戶管理</h3>
+<a class="flex items-center justify-between py-4 group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container" data-icon="person_outline">person_outline</span>
+<span class="font-label-lg text-label-lg">個人資料設置</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-4 group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container" data-icon="credit_card">credit_card</span>
+<span class="font-label-lg text-label-lg">支付方式</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between py-4 group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container" data-icon="verified_user">verified_user</span>
+<span class="font-label-lg text-label-lg">隱私與安全</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<button class="w-full mt-stack-lg py-4 border border-error/50 text-error rounded-lg font-bold hover:bg-error/10 transition-colors">
+                登出帳號
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 bg-primary-container text-on-primary-fixed z-50">
+  <a class="flex flex-col items-center justify-center text-on-primary-fixed/70 hover:text-on-primary-fixed transition-all active:scale-90" href="#">
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span class="text-[10px] font-medium mt-1">首頁</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-primary-fixed/70 hover:text-on-primary-fixed transition-all active:scale-90" href="#">
+    <span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+    <span class="text-[10px] font-medium mt-1">攰墐</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-primary-fixed/70 hover:text-on-primary-fixed transition-all active:scale-90" href="#">
+    <span class="material-symbols-outlined" data-icon="search">search</span>
+    <span class="text-[10px] font-medium mt-1">找球場</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-primary-fixed/70 hover:text-on-primary-fixed transition-all active:scale-90" href="#">
+    <span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+    <span class="text-[10px] font-medium mt-1">找夥伴</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-primary-fixed bg-on-primary/20 rounded-lg px-3 py-1 scale-105 transition-all active:scale-95" href="#">
+    <span class="material-symbols-outlined" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+    <span class="text-[10px] font-bold mt-1">個人檔案</span>
+  </a>
+</nav>
+<script>
+        function switchTab(tab) {
+            const bookingsTab = document.getElementById('tab-bookings');
+            const savedTab = document.getElementById('tab-saved');
+            const bookingsContent = document.getElementById('content-bookings');
+            const savedContent = document.getElementById('content-saved');
+
+            if (tab === 'bookings') {
+                bookingsTab.classList.add('tab-active');
+                bookingsTab.classList.remove('text-on-surface-variant');
+                savedTab.classList.remove('tab-active');
+                savedTab.classList.add('text-on-surface-variant');
+                
+                bookingsContent.classList.remove('hidden');
+                savedContent.classList.add('hidden');
+            } else {
+                savedTab.classList.add('tab-active');
+                savedTab.classList.remove('text-on-surface-variant');
+                bookingsTab.classList.remove('tab-active');
+                bookingsTab.classList.add('text-on-surface-variant');
+                
+                savedContent.classList.remove('hidden');
+                bookingsContent.classList.add('hidden');
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body></html>

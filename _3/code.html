@@ -1,0 +1,315 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CourtFlow | Find Your Game</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800&amp;family=Chivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 10px;
+        }
+        .custom-active-tab {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#131313",
+                      "surface-container-highest": "#353535",
+                      "inverse-on-surface": "#303030",
+                      "primary-container": "#ff8c00",
+                      "on-tertiary-fixed": "#001e2e",
+                      "on-tertiary": "#00344c",
+                      "inverse-primary": "#904d00",
+                      "surface-container-high": "#2a2a2a",
+                      "on-surface": "#e2e2e2",
+                      "on-primary-fixed": "#2f1500",
+                      "surface-container": "#1f1f1f",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "tertiary-fixed-dim": "#85cfff",
+                      "surface-bright": "#393939",
+                      "primary-fixed-dim": "#ffb77d",
+                      "on-secondary": "#2f3131",
+                      "tertiary-fixed": "#c7e7ff",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#ffb77d",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "on-primary": "#4d2600",
+                      "tertiary-container": "#00b5fc",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-container": "#004360",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-primary-container": "#623200",
+                      "on-surface-variant": "#ddc1ae",
+                      "tertiary": "#85cfff",
+                      "surface-dim": "#131313",
+                      "on-background": "#e2e2e2",
+                      "secondary-fixed": "#e2e2e2",
+                      "primary": "#ffb77d",
+                      "surface": "#131313",
+                      "on-tertiary-fixed-variant": "#004c6c",
+                      "outline": "#a48c7a",
+                      "outline-variant": "#564334",
+                      "on-secondary-fixed-variant": "#454747",
+                      "secondary-container": "#454747",
+                      "primary-fixed": "#ffdcc3",
+                      "secondary": "#c6c6c7",
+                      "surface-container-low": "#1b1b1b",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-primary-fixed-variant": "#6e3900",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353535",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "stack-md": "16px",
+                      "stack-sm": "4px",
+                      "gutter": "12px",
+                      "container-margin": "20px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Anybody"],
+                      "body-lg": ["Chivo"],
+                      "headline-md": ["Anybody"],
+                      "display-lg": ["Anybody"],
+                      "body-md": ["Chivo"],
+                      "headline-lg-mobile": ["Anybody"],
+                      "label-lg": ["Chivo"],
+                      "label-sm": ["Chivo"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full top-0 border-b border-outline-variant bg-background flex justify-between items-center px-container-margin py-4 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sports_basketball">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">COURTFLOW</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pb-24 pt-4 px-container-margin max-w-5xl mx-auto">
+<!-- Search Section -->
+<section class="mb-stack-lg">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary-container transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-12 py-4 text-on-surface placeholder:text-outline font-body-md transition-all" placeholder="搔倉球場各瀂或地點..." type="text">
+</div>
+</section>
+<!-- Filter System -->
+<section class="mb-stack-lg">
+<h2 class="font-label-lg text-label-lg uppercase text-outline mb-stack-md">快速篥選</h2>
+<div class="flex flex-wrap gap-gutter">
+<!-- Indoor Tag -->
+<label class="cursor-pointer group">
+<input class="hidden peer" type="checkbox">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container peer-checked:text-on-primary-fixed transition-all group-hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]" data-icon="roofing">roofing</span>
+<span class="font-label-sm text-label-sm">室內</span>
+</div>
+</label>
+<!-- 24 Hours Tag -->
+<label class="cursor-pointer group">
+<input checked="" class="hidden peer" type="checkbox">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container peer-checked:text-on-primary-fixed transition-all group-hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm text-label-sm">24小時</span>
+</div>
+</label>
+<!-- Near Me Tag -->
+<label class="cursor-pointer group">
+<input class="hidden peer" type="checkbox">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container peer-checked:text-on-primary-fixed transition-all group-hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]" data-icon="near_me">near_me</span>
+<span class="font-label-sm text-label-sm">離我最近</span>
+</div>
+</label>
+<!-- Pro Grade Tag -->
+<label class="cursor-pointer group">
+<input class="hidden peer" type="checkbox">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded peer-checked:bg-primary-container peer-checked:border-primary-container peer-checked:text-on-primary-fixed transition-all group-hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]" data-icon="grade">grade</span>
+<span class="font-label-sm text-label-sm">專業等級</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Results Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Court Card 1 -->
+<div class="bg-surface-container border border-outline-variant rounded group hover:border-primary-container transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional high-contrast indoor basketball court with sleek black and dark wood floorings, illuminated by intense orange neon stadium lights. The atmosphere is energetic and modern, reflecting an elite training facility aesthetic. Vibrant orange highlights reflect off the polished surface in a premium dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArZdRDtC-XUiZgvSxU8uF1qLBcnIhWTvePPsrv_ai07KfWwx6cUODfCLLBykvCyyaZVFvptiC9qI_7fK64WAd3bted_PTeRjdO5_2Hy-lp2-YfsliLK2uY9n8iSoKKXgEyJon2iIRvNqMd0m5uH5rLLnKXwL9FEpALehD9gcERwqdLi1eGq6_Ig1xHyiiBGiSxLgwrsyEGnMN2Y5pvJBpia7vOIf3MpVolK9b1aMQRmGGhaAaornOUddXVJxHcepCuLHUE3jVebtRA">
+<div class="absolute top-4 right-4 px-3 py-1 bg-background/80 backdrop-blur rounded font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span> 4.9
+                    </div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-container-margin">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">The Blacktop Center</h3>
+<span class="text-primary-container font-label-lg">$45/hr</span>
+</div>
+<div class="flex items-center gap-2 text-outline text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+<span class="">距離 0.8 公里 • 市中心</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">全場</span>
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">置物櫃</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed py-3 font-label-lg uppercase tracking-widest hover:opacity-90 active:scale-[0.98] transition-all">立即預約</button>
+</div>
+</div>
+<!-- Court Card 2 -->
+<div class="bg-surface-container border border-outline-variant rounded group hover:border-primary-container transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An expansive modern athletic complex featuring multiple basketball hoops under dramatic cinematic lighting. The color palette is strictly dark grays and deep blacks with vivid orange accents on the court markings and rim lights. The setting is clean, professional, and captures a high-octane sporting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLhnb9efupCqcQ3uGEYD7J2Vn06Ycr811uZMgbRG7GxLQDgnBeZv5NsquCfTmat0hWvhyx_AUlm52eLyEVZthFSDs4BLc-jmLJhnFpGBfqduXBU81nxsrVSY85_eg206ZHncaQG3k1Vq1lGWfJtOsb2mpc4LivJNT0xckYWW-4Pwnm5tv2dodMsupd5sXLVPxhYctYdLY8KeARjS6RcNWYVW0je25DRNKU3xKyf2-lCTaHjl7O9HPaZlhdKprrTnpeC4BAseq3ytFR">
+<div class="absolute top-4 right-4 px-3 py-1 bg-background/80 backdrop-blur rounded font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span> 4.7
+                    </div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-container-margin">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Vanguard Arena</h3>
+<span class="text-primary-container font-label-lg">$60/hr</span>
+</div>
+<div class="flex items-center gap-2 text-outline text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+<span class="">距離 2.4 公里 • 市中心</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">室內</span>
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">空調設備</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed py-3 font-label-lg uppercase tracking-widest hover:opacity-90 active:scale-[0.98] transition-all">立即預約</button>
+</div>
+</div>
+<!-- Court Card 3 -->
+<div class="bg-surface-container border border-outline-variant rounded group hover:border-primary-container transition-all overflow-hidden flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist rooftop basketball court at night with a stunning cityscape backdrop. The court features clean white lines against a dark surface, glowing under sharp industrial floodlights. The aesthetic is high-contrast, professional, and focuses on geometric precision with a dominant palette of black and fiery orange tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLujEpS9uEk9ebjh4oujmH4a9loJDhw6WQGhGITFK9n_xv_v1eIfpc9ZIL91WAgD1Rs6xP8IQ9ixkSyTobm0XJC05vZi_Qv_x9A48Ah2ogndpFJ2ssRsLtS8DIHRGgGS_vVqsYSonEssp8T5-mLxsk8It-UBhOZePtBDwZHLorHM6a8RE1runEI99ZIwtqb_hoFtuAD0Xw9xhEM23op8qibAWu44Uf4L4nSM4J5W4oldGdwu_7Wrgn_LFCLp7mwgGv3ifX-DASHitW">
+<div class="absolute top-4 right-4 px-3 py-1 bg-background/80 backdrop-blur rounded font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span> 4.5
+                    </div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-surface-container to-transparent"></div>
+</div>
+<div class="p-container-margin">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Skyline Rooftop</h3>
+<span class="text-primary-container font-label-lg">$35/hr</span>
+</div>
+<div class="flex items-center gap-2 text-outline text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+<span class="">距離 1.5 公里 • 東區</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">半場</span>
+<span class="bg-surface-container-highest text-on-surface px-2 py-1 rounded-sm text-[10px] uppercase font-bold tracking-widest">頂樓</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed py-3 font-label-lg uppercase tracking-widest hover:opacity-90 active:scale-[0.98] transition-all">立即預約</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 z-50" style="background-color: rgb(255, 140, 0);"><button class="flex flex-col items-center justify-center text-on-primary-fixed/60 hover:bg-black/10 transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed/60 hover:bg-black/10 transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="add_box">add_box</span>
+<span class="font-label-sm text-label-sm">新增</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed scale-110 transition-all active:scale-90">
+<span class="material-symbols-outlined custom-active-tab" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">找球場</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed/60 hover:bg-black/10 transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="font-label-sm text-label-sm">找夥伴</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed/60 hover:bg-black/10 transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">個人檔案</span>
+</button></nav>
+<script>
+        // Simple search interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('main section.grid > div');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Toggle effect for filter tags
+        const filters = document.querySelectorAll('input[type="checkbox"]');
+        filters.forEach(filter => {
+            filter.addEventListener('change', function() {
+                // In a real app, this would trigger a re-filtering logic
+                console.log('Filter toggled:', this.nextElementSibling.querySelector('span:last-child').textContent);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

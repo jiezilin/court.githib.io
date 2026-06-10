@@ -1,0 +1,232 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Chivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#131313",
+                    "surface-container-highest": "#353535",
+                    "inverse-on-surface": "#303030",
+                    "primary-container": "#ff8c00",
+                    "on-tertiary-fixed": "#001e2e",
+                    "on-tertiary": "#00344c",
+                    "inverse-primary": "#904d00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-surface": "#e2e2e2",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-container": "#1f1f1f",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "tertiary-fixed-dim": "#85cfff",
+                    "surface-bright": "#393939",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-secondary": "#2f3131",
+                    "tertiary-fixed": "#c7e7ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-tint": "#ffb77d",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "on-primary": "#4d2600",
+                    "tertiary-container": "#00b5fc",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary-container": "#004360",
+                    "on-secondary-container": "#b4b5b5",
+                    "on-primary-container": "#623200",
+                    "on-surface-variant": "#ddc1ae",
+                    "tertiary": "#85cfff",
+                    "surface-dim": "#131313",
+                    "on-background": "#e2e2e2",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary": "#ffb77d",
+                    "surface": "#131313",
+                    "on-tertiary-fixed-variant": "#004c6c",
+                    "outline": "#a48c7a",
+                    "outline-variant": "#564334",
+                    "on-secondary-fixed-variant": "#454747",
+                    "secondary-container": "#454747",
+                    "primary-fixed": "#ffdcc3",
+                    "secondary": "#c6c6c7",
+                    "surface-container-low": "#1b1b1b",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#353535",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-md": "16px",
+                    "stack-sm": "4px",
+                    "gutter": "12px",
+                    "container-margin": "20px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anybody"],
+                    "body-lg": ["Chivo"],
+                    "headline-md": ["Anybody"],
+                    "display-lg": ["Anybody"],
+                    "body-md": ["Chivo"],
+                    "headline-lg-mobile": ["Anybody"],
+                    "label-lg": ["Chivo"],
+                    "label-sm": ["Chivo"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #e2e2e2; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gradient-overlay {
+            background: linear-gradient(to top, #000000 15%, transparent 70%);
+        }
+        .vignette {
+            box-shadow: inset 0 0 150px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+<!-- High-Impact Sports Background -->
+<div class="fixed inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 filter brightness-50" data-alt="A cinematic low-angle shot of a premium indoor basketball court at night. The polished wood floor reflects intense overhead floodlights, creating high-contrast highlights and deep shadows. The atmosphere is energetic and professional, featuring a dark mode aesthetic with vibrant orange basketball lines. The scene is captured with a shallow depth of field, emphasizing the crisp texture of the hardwood court under dramatic athletic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTi9h0JKkdNlyepb-fpWVM16bz-zWVpZ67xLBmDUf6fSKdEPvVvV2fnb2g-jDcXOp33LkZ4-PbOFAWkjSdwIzKgmpFlSN8B74kk7DiiIq-GDleL3H6cnaM6KX0-BxFBjUdTdmb7X2tEpSYG0S2fx2mupIbCx8qD1lW41Au9Cc4id_ZQbVkkUfKaHlJT_tvJLBMj9BDBnJWgc6tvbe7FKiHrXBTMl-NmZrdoZYCBSUL1blRHVawjlqejyCeE_mIjrKOktXUeil8bl0O">
+<div class="absolute inset-0 bg-gradient-overlay"></div>
+<div class="absolute inset-0 vignette"></div>
+</div>
+<!-- Login Container -->
+<main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-container-margin" style="opacity: 1; transition: opacity 1s ease-out;">
+<!-- Branding Section -->
+<div class="flex flex-col items-center mb-stack-lg animate-fade-in">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-container text-[40px]" style="font-variation-settings: 'FILL' 1;">sports_basketball</span>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter leading-none">
+                    COURT<span class="text-primary-container">FLOW</span>
+</h1>
+</div>
+<p class="font-body-md text-on-surface-variant tracking-widest uppercase opacity-80">專楠球場管理系統</p>
+</div>
+<!-- Action Card -->
+<div class="w-full max-w-sm p-8 bg-surface-container/40 backdrop-blur-md border border-outline-variant/30 rounded-lg flex flex-col gap-stack-md items-center">
+<div class="w-full text-center mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">提升你的球技</h2>
+<p class="font-body-md text-on-surface-variant">登入以預約您的下場比賽</p>
+</div>
+<!-- Social Login Buttons -->
+<div class="w-full space-y-4">
+<!-- Google Login -->
+<button class="group w-full flex items-center justify-center gap-3 py-4 px-6 bg-surface-container-high border border-outline-variant hover:border-primary-container transition-all duration-300 active:scale-95">
+<svg class="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-label-lg text-label-lg uppercase text-on-surface">使用 Google 帳號登入</span>
+</button>
+<!-- Facebook Login -->
+<button class="group w-full flex items-center justify-center gap-3 py-4 px-6 bg-surface-container-high border border-outline-variant hover:border-primary-container transition-all duration-300 active:scale-95">
+<svg class="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+<span class="font-label-lg text-label-lg uppercase text-on-surface">使用 Facebook 帳號登入</span>
+</button>
+</div>
+<!-- Alternate Login -->
+<div class="w-full flex items-center gap-stack-sm my-2">
+<div class="flex-1 h-[1px] bg-outline-variant/50"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">或</span>
+<div class="flex-1 h-[1px] bg-outline-variant/50"></div>
+</div>
+<button class="font-label-lg text-label-lg uppercase text-primary-container hover:text-primary transition-colors active:scale-95">使用電子郵件登入</button>
+<!-- Footer Links -->
+<div class="mt-4 flex flex-wrap justify-center gap-stack-md">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">隱私權政策</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">服務條款</a>
+</div>
+</div>
+<!-- Atmospheric Accents -->
+<div class="absolute bottom-10 left-10 hidden md:block border-l-2 border-primary-container pl-4">
+<p class="font-label-lg text-label-lg text-on-surface-variant">ELITE PERFORMANCE</p>
+<p class="font-headline-md text-headline-md text-on-surface">START HERE.</p>
+</div>
+<div class="absolute top-10 right-10 hidden md:block text-right">
+<p class="font-label-lg text-label-lg text-on-surface-variant">v2.4.0</p>
+</div>
+</main>
+<!-- Custom Cursor Effect -->
+<div class="fixed w-[600px] h-[600px] rounded-full pointer-events-none z-[1] transition-opacity duration-1000 opacity-0 bg-[radial-gradient(circle,rgba(255,140,0,0.05)_0%,transparent_70%)]" id="cursor-glow"></div>
+<script>
+        // Interactive glow following mouse
+        const glow = document.getElementById('cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.opacity = '1';
+            const x = e.clientX - 300;
+            const y = e.clientY - 300;
+            glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Simple enter animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.querySelector('main');
+            main.style.opacity = '0';
+            main.style.transition = 'opacity 1s ease-out';
+            setTimeout(() => {
+                main.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+
+
+
+
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-[#ff8c00] border-t border-black/10 flex justify-around items-center py-2 md:hidden"><a href="#" class="flex flex-col items-center gap-1 text-[#2f1500]">
+    <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+    <span class="text-label-sm font-label-sm">首頁</span>
+  </a>
+  <a href="#" class="flex flex-col items-center gap-1 text-[#2f1500] opacity-70 hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-[24px]">calendar_today</span>
+    <span class="text-label-sm font-label-sm">預約</span>
+  </a>
+  <a href="#" class="flex flex-col items-center gap-1 text-[#2f1500] opacity-70 hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-[24px]">person</span>
+    <span class="text-label-sm font-label-sm">個人資料</span>
+  </a></nav>
+
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CourtFlow - 新增球場</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800&amp;family=Chivo:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#131313",
+                      "surface-container-highest": "#353535",
+                      "inverse-on-surface": "#303030",
+                      "primary-container": "#ff8c00",
+                      "on-tertiary-fixed": "#001e2e",
+                      "on-tertiary": "#00344c",
+                      "inverse-primary": "#904d00",
+                      "surface-container-high": "#2a2a2a",
+                      "on-surface": "#e2e2e2",
+                      "on-primary-fixed": "#2f1500",
+                      "surface-container": "#1f1f1f",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "tertiary-fixed-dim": "#85cfff",
+                      "surface-bright": "#393939",
+                      "primary-fixed-dim": "#ffb77d",
+                      "on-secondary": "#2f3131",
+                      "tertiary-fixed": "#c7e7ff",
+                      "on-error-container": "#ffdad6",
+                      "surface-tint": "#ffb77d",
+                      "error-container": "#93000a",
+                      "on-error": "#690005",
+                      "on-primary": "#4d2600",
+                      "tertiary-container": "#00b5fc",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-container": "#004360",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-primary-container": "#623200",
+                      "on-surface-variant": "#ddc1ae",
+                      "tertiary": "#85cfff",
+                      "surface-dim": "#131313",
+                      "on-background": "#e2e2e2",
+                      "secondary-fixed": "#e2e2e2",
+                      "primary": "#ffb77d",
+                      "surface": "#131313",
+                      "on-tertiary-fixed-variant": "#004c6c",
+                      "outline": "#a48c7a",
+                      "outline-variant": "#564334",
+                      "on-secondary-fixed-variant": "#454747",
+                      "secondary-container": "#454747",
+                      "primary-fixed": "#ffdcc3",
+                      "secondary": "#c6c6c7",
+                      "surface-container-low": "#1b1b1b",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-primary-fixed-variant": "#6e3900",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#353535",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "stack-md": "16px",
+                      "stack-sm": "4px",
+                      "gutter": "12px",
+                      "container-margin": "20px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Anybody"],
+                      "body-lg": ["Chivo"],
+                      "headline-md": ["Anybody"],
+                      "display-lg": ["Anybody"],
+                      "body-md": ["Chivo"],
+                      "headline-lg-mobile": ["Anybody"],
+                      "label-lg": ["Chivo"],
+                      "label-sm": ["Chivo"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b border-outline-variant w-full top-0 flex justify-between items-center px-container-margin py-4 w-full z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary">sports_basketball</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">COURTFLOW</h1>
+</div>
+<button class="hover:opacity-80 active:scale-95 transition-transform text-primary dark:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col px-container-margin py-stack-md pb-32 overflow-y-auto custom-scrollbar">
+<div class="flex flex-col gap-stack-sm mb-stack-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">新增球場</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">新增籃球場資訊，回饋球友社群。</p>
+</div>
+<form class="flex flex-col gap-stack-lg">
+<!-- Section: Court Details -->
+<div class="space-y-stack-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">球場名稱</label>
+<input class="bg-background border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all text-on-surface p-4 rounded-none font-body-md text-body-md" placeholder="例如：信義運動中心" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">地址</label>
+<div class="relative">
+<input class="w-full bg-background border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all text-on-surface p-4 pr-12 rounded-none font-body-md text-body-md" placeholder="搜尋地點..." type="text">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
+</div>
+</div>
+<!-- Map Preview Mockup -->
+<div class="h-48 w-full bg-surface-container overflow-hidden border border-outline-variant relative">
+<img class="w-full h-full object-cover opacity-60" data-alt="A detailed digital map interface with dark mode styling, featuring a custom orange marker over a metropolitan area. The aesthetic is clean and high-contrast, matching a professional sports facility booking application. The map shows street details with a minimalist dark theme, emphasized by vibrant orange accents and deep black backgrounds to maintain visual consistency with the athletic brand identity." data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8t_TUA3E5Fn3cbMlNKCShPP9tlwgYiBqYGOj6Gsqua9pqcsRQxmv8NiHuS1bhOp5ET-dJO9-DznMA6IHbKFYuXtGlIZbY3qInIZCanhGTIQe_HzDeKf1dhg2zeoBHPbaiqO-f1959wu3zv1VrTMeRillLsg93utUGGpelYAc_VfYCnnCPcNoXOf5U6_i95PckYBjFCSuP8Ifa7aiVWQDfSobZOHec2mkcGhazINI4SiI238kGR9o6OUXnMjMXmYk15MRERGGmhXWZ">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-primary-container text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Section: Specifications -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">球場類型</label>
+<div class="grid grid-cols-1 gap-2">
+<button class="border border-primary-container bg-surface-container p-4 text-center font-label-lg text-label-lg text-primary-container" type="button">室內</button>
+<button class="border border-outline-variant bg-background p-4 text-center font-label-lg text-label-lg text-on-surface opacity-60 hover:opacity-100 transition-all" type="button">室外</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">地面材質</label>
+<div class="grid grid-cols-1 gap-2">
+<button class="border border-outline-variant bg-background p-4 text-center font-label-lg text-label-lg text-on-surface opacity-60" type="button">木地板</button>
+<button class="border border-outline-variant bg-background p-4 text-center font-label-lg text-label-lg text-on-surface opacity-60" type="button">水泥地</button>
+</div>
+</div>
+</div>
+<!-- Section: Media Upload -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider">球場照片</label>
+<div class="grid grid-cols-3 gap-2 h-32">
+<div class="bg-surface-container border border-dashed border-outline flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">add_a_photo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">上傳</span>
+</div>
+<div class="bg-surface-container border border-outline-variant relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A professional-grade indoor basketball court during the golden hour, showing the polished hardwood floor reflecting high-key overhead arena lighting. The shot captures a low-angle perspective, emphasizing the depth and texture of the court. The atmosphere is quiet yet intense, featuring a dark-mode friendly color palette with deep shadows and warm orange wood tones, maintaining the athletic and premium visual identity of the app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXR5pZ3L1hex6CWJlCU1wvTlUOefag6aP9NO8_KFdeWQTrU2l3C1uBpal08XguqZLu4jvvcgJpkH8tQGgn9uXzFAJtQvhhzN2eIcFdFcWb9eLtLNmWlsdAlQfexttBjuAzMlXO-kjLGCHdNsXHlAC6O5dFlKNSF1CqUUdvHf3usulJgEFQd3ZY2hd0UNYKtqG4PhiO_eIZFVT1orBGJzm2-S3FGb7nz5iXaEeTM5EiwoVLL9zVEsJtW_xPKnSCux6sFFGLf-g8bze">
+<button class="absolute top-1 right-1 bg-background/80 rounded-full p-1 leading-none">
+<span class="material-symbols-outlined text-sm text-on-surface">close</span>
+</button>
+</div>
+<div class="bg-surface-container border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant">image</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-stack-md pt-stack-md">
+<button class="bg-primary-container text-on-primary-fixed font-label-lg text-label-lg py-5 uppercase tracking-widest font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg" type="submit">註冊球場</button>
+<button class="border border-on-surface text-on-surface font-label-lg text-label-lg py-5 uppercase tracking-widest hover:bg-on-surface hover:text-background transition-all" type="button">捨棄草稿</button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 bg-primary-container z-50">
+<button class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:opacity-100 transition-all active:scale-90 flex-1">
+  <span class="material-symbols-outlined">home</span>
+  <span class="font-label-sm text-[10px] mt-1 uppercase">首頁</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-fixed scale-110 flex-1">
+  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span>
+  <span class="font-label-sm text-[10px] mt-1 uppercase font-bold">新增</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:opacity-100 transition-all active:scale-90 flex-1">
+  <span class="material-symbols-outlined">search</span>
+  <span class="font-label-sm text-[10px] mt-1 uppercase">找球場</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:opacity-100 transition-all active:scale-90 flex-1">
+  <span class="material-symbols-outlined">handshake</span>
+  <span class="font-label-sm text-[10px] mt-1 uppercase">找夥伴</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:opacity-100 transition-all active:scale-90 flex-1">
+  <span class="material-symbols-outlined">person</span>
+  <span class="font-label-sm text-[10px] mt-1 uppercase">個人檔案</span>
+</button></nav>
+<script>
+        // Simple micro-interactions for the form buttons
+        document.querySelectorAll('form button[type="button"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Toggle active styles if they are part of a grid selection
+                const parent = this.parentElement;
+                if (parent.classList.contains('grid')) {
+                    parent.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('border-primary-container', 'text-primary-container');
+                        b.classList.add('border-outline-variant', 'text-on-surface', 'opacity-60');
+                    });
+                    this.classList.add('border-primary-container', 'text-primary-container');
+                    this.classList.remove('border-outline-variant', 'text-on-surface', 'opacity-60');
+                }
+            });
+        });
+
+        // Form submission prevents default for this mockup
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Court registration sequence initiated.');
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>
